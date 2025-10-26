@@ -40,6 +40,74 @@
             font-size: 1.1em; cursor: pointer; transition: all 0.3s ease;
         }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5); }
+
+        .info-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin: 20px auto;
+    max-width: 900px;
+  }
+
+  .anime-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .anime-cover {
+    width: 200px;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+
+  .anime-details {
+    flex: 1;
+    color: #333;
+  }
+
+  .anime-title {
+    font-size: 1.8em;
+    color: #667eea;
+    margin-bottom: 10px;
+  }
+
+  .anime-sinopsis {
+    font-size: 1em;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 10px;
+  }
+
+  .anime-status {
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
+  .anime-status span {
+    color: #00b300; /* verde */
+  }
+
+  @media (max-width: 768px) {
+    .anime-cover {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .anime-info {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .anime-details {
+      text-align: left;
+    }
+  }
     </style>
 </head>
 <body>
@@ -129,4 +197,5 @@
     </script>
 </body>
 </html>
+
 
