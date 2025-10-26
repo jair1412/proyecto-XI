@@ -1,211 +1,202 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnimeStream - Ver Anime Online</title>
-    <style>
-        /* --- tus estilos originales --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .container { max-width: 1200px; margin: 0 auto; }
-        header { text-align: center; color: white; margin-bottom: 30px; }
-        header h1 { font-size: 3em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        .video-section {
-            background: white; border-radius: 20px; padding: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3); margin-bottom: 30px;
-        }
-        .episode-title {
-            color: #667eea; font-size: 1.8em; margin-bottom: 20px;
-            padding-bottom: 15px; border-bottom: 3px solid #667eea;
-        }
-        .video-wrapper {
-            position: relative; padding-bottom: 56.25%; height: 0;
-            overflow: hidden; border-radius: 15px; background: #000;
-        }
-        .video-wrapper iframe {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
-        }
-        .controls {
-            display: flex; justify-content: center; gap: 15px; margin-top: 25px;
-        }
-        .btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; padding: 15px 30px; border: none; border-radius: 50px;
-            font-size: 1.1em; cursor: pointer; transition: all 0.3s ease;
-        }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5); }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimeStream - Ver Anime Online</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        .info-section {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    margin: 20px auto;
-    max-width: 900px;
-  }
-
-  .anime-info {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-
-  .anime-cover {
-    width: 200px;
-    height: auto;
-    border-radius: 15px;
-    object-fit: cover;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  }
-
-  .anime-details {
-    flex: 1;
-    color: #333;
-  }
-
-  .anime-title {
-    font-size: 1.8em;
-    color: #667eea;
-    margin-bottom: 10px;
-  }
-
-  .anime-sinopsis {
-    font-size: 1em;
-    line-height: 1.6;
-    text-align: justify;
-    margin-bottom: 10px;
-  }
-
-  .anime-status {
-    font-weight: bold;
-    font-size: 1.1em;
-  }
-
-  .anime-status span {
-    color: #00b300; /* verde */
-  }
-
-  @media (max-width: 768px) {
-    .anime-cover {
-      width: 100%;
-      max-width: 300px;
-      margin: 0 auto;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0e0e0e;
+      color: #fff;
+      min-height: 100vh;
+      padding: 20px;
     }
 
-    .anime-info {
-      flex-direction: column;
-      text-align: center;
+    .container { max-width: 1200px; margin: auto; }
+
+    header { text-align: center; margin-bottom: 30px; }
+    header h1 { font-size: 3em; color: #ffcc00; margin-bottom: 10px; }
+    header p { font-size: 1.2em; opacity: 0.9; }
+
+    .info-section {
+      background: #1b1b1b;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      margin-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .anime-cover {
+      width: 200px;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
 
     .anime-details {
-      text-align: left;
+      flex: 1;
     }
-  }
-    </style>
+
+    .anime-title {
+      font-size: 1.8em;
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    .anime-sinopsis {
+      line-height: 1.6;
+      margin-bottom: 10px;
+      text-align: justify;
+    }
+
+    .anime-status span { color: #00b300; font-weight: bold; }
+
+    .video-section {
+      background: #1b1b1b;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      margin-bottom: 30px;
+    }
+
+    .episode-title {
+      color: #ffcc00;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #ffcc00;
+      padding-bottom: 10px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 15px;
+      background: #000;
+      margin-bottom: 20px;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background-color: #ffcc00;
+      color: #000;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e6b800;
+    }
+
+    @media (max-width: 768px) {
+      .info-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .anime-cover { width: 70%; margin: 0 auto; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🎬 AnimeStream</h1>
-            <p>Disfruta de tus animes favoritos en HD</p>
-        </header>
+  <div class="container">
+    <header>
+      <h1>🎬 AnimeStream</h1>
+      <p>Disfruta de tus animes favoritos en HD</p>
+    </header>
 
-           <div class="info-section">
-                <div class="anime-info">
-                    <img src="img/portada-tomodachi.jpg" alt="Portada del anime" class="anime-cover">
-            
-                    <div class="anime-details">
-                    <h2 class="anime-title">Tomodachi no Imouto ga Ore ni dake Uzai</h2>
-                    <p class="anime-sinopsis">
-                        ¡Si una chica te molesta, eso significa que le gustas! Desafortunadamente, Akiteru sabe por experiencia que no es así. 
-                        Porque cada chica con la que interactúa solo le muestra desprecio, ¡y no ha conseguido salir con ninguna! 
-                        Afortunadamente, le preocupa más conseguir un lugar para él y sus amigos de desarrollo de juegos en el negocio de su tío. 
-                        Pero cuando su tío le impone una condición que implica hacer el papel de novio de su hija, Akiteru no tiene más remedio que aceptarlo. 
-                        ¿Qué pensará Iroha, la hermana de su mejor amigo, que lo acosa sin parar, sobre la noticia?
-                    </p>
-                    <p class="anime-status">Estado: <span>En emisión</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="video-section">
-            <h2 class="episode-title" id="titulo">📺 Episodio 1</h2>
-            <div class="video-wrapper">
-                <iframe id="videoFrame" 
-                    src="https://hglink.to/e/zw27e3ujkceb" 
-                    allowfullscreen 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-                </iframe>
-            </div>
-            
-            <div class="controls">
-                <button class="btn" id="anterior">⬅️ Anterior</button>
-                <button class="btn" id="siguiente">➡️ Siguiente</button>
-            </div>
-        </div>
-
-        
+    <div class="info-section">
+      <img src="img/portada-tomodachi.jpg" alt="Portada del anime" class="anime-cover">
+      <div class="anime-details">
+        <h2 class="anime-title">Tomodachi no Imouto ga Ore ni dake Uzai</h2>
+        <p class="anime-sinopsis">
+          ¡Si una chica te molesta, eso significa que le gustas! Desafortunadamente, Akiteru sabe por experiencia que no es así. 
+          Porque cada chica con la que interactúa solo le muestra desprecio, ¡y no ha conseguido salir con ninguna! 
+          Afortunadamente, le preocupa más conseguir un lugar para él y sus amigos de desarrollo de juegos en el negocio de su tío. 
+          Pero cuando su tío le impone una condición que implica hacer el papel de novio de su hija, Akiteru no tiene más remedio que aceptarlo. 
+          ¿Qué pensará Iroha, la hermana de su mejor amigo, que lo acosa sin parar, sobre la noticia?
+        </p>
+        <p class="anime-status">Estado: <span>En emisión</span></p>
+      </div>
     </div>
 
-   <script>
+    <div class="video-section">
+      <h2 class="episode-title" id="titulo">📺 Episodio 1</h2>
+      <div class="video-wrapper">
+        <iframe id="videoFrame" 
+                src="https://hglink.to/e/zw27e3ujkceb" 
+                allowfullscreen 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+        </iframe>
+      </div>
+
+      <div class="controls">
+        <button class="btn" id="anterior">⬅️ Anterior</button>
+        <button class="btn" id="siguiente">➡️ Siguiente</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
     // Lista de episodios
     const episodios = [
-        "https://hglink.to/e/zw27e3ujkceb", // episodio 1
-        "https://hglink.to/e/bkkegvtpbx4z", // episodio 2
-        "https://hglink.to/e/arqezhrhuz59", // episodio 3
-        "https://hglink.to/e/b9md60ijbay1", // episodio 4
+      "https://hglink.to/e/zw27e3ujkceb", // episodio 1
+      "https://hglink.to/e/bkkegvtpbx4z", // episodio 2
+      "https://hglink.to/e/arqezhrhuz59", // episodio 3
+      "https://hglink.to/e/b9md60ijbay1", // episodio 4
     ];
 
     const frame = document.getElementById("videoFrame");
     const titulo = document.getElementById("titulo");
     const numEp = document.getElementById("numEp");
 
-    // Leer número de episodio desde la URL
     const params = new URLSearchParams(window.location.search);
-    const cap = parseInt(params.get("cap")) || 1; // si no hay ?cap=, carga el 1
-    let actual = cap - 1; // índice del episodio
+    const cap = parseInt(params.get("cap")) || 1;
+    let actual = cap - 1;
 
-    // Cargar episodio al abrir la página
     function cambiarEpisodio() {
-        frame.src = episodios[actual];
-        titulo.textContent = `📺 Episodio ${actual + 1}`;
-        numEp.textContent = actual + 1;
+      frame.src = episodios[actual];
+      titulo.textContent = `📺 Episodio ${actual + 1}`;
+      if(numEp) numEp.textContent = actual + 1;
     }
 
     cambiarEpisodio();
 
-    // Botón anterior
     document.getElementById("anterior").onclick = () => {
-        if (actual > 0) {
-            actual--;
-            cambiarEpisodio();
-        } else {
-            alert("Este es el primer episodio");
-        }
-    };
+      if(actual > 0){ actual--; cambiarEpisodio(); } 
+      else { alert("Este es el primer episodio"); }
+    }
 
-    // Botón siguiente
     document.getElementById("siguiente").onclick = () => {
-        if (actual < episodios.length - 1) {
-            actual++;
-            cambiarEpisodio();
-        } else {
-            alert("No hay más episodios");
-        }
-    };
-</script>
-
+      if(actual < episodios.length - 1){ actual++; cambiarEpisodio(); } 
+      else { alert("No hay más episodios"); }
+    }
+  </script>
 </body>
 </html>
-
-
-
-
