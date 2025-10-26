@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tomodachi no Imouto ga Ore ni dake Uzai - Info</title>
+  <title>AnimeStream - Info Anime</title>
   <style>
     body {
       background-color: #0e0e0e;
@@ -72,7 +72,7 @@
       border-radius: 8px;
       cursor: pointer;
       transition: background 0.3s, color 0.3s;
-      flex: 1 1 100px; /* se adaptan al ancho disponible */
+      flex: 1 1 100px;
     }
 
     .capitulos button:hover {
@@ -83,27 +83,23 @@
     /* --- Responsive para móviles --- */
     @media (max-width: 768px) {
       .anime-header {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        text-align: center;
+        justify-content: center;
+        text-align: left;
       }
 
       .anime-header img {
-        width: 70%;
-        max-width: 250px;
-        margin-bottom: 15px;
-      }
-
-      .anime-info {
-        width: 100%;
+        width: 80px;
+        margin-right: 10px;
       }
 
       .anime-info h1 {
-        font-size: 1.5em;
+        font-size: 1.2em;
       }
 
       .anime-info p {
-        font-size: 0.95em;
+        font-size: 0.9em;
       }
 
       .capitulos {
@@ -111,7 +107,7 @@
       }
 
       .capitulos button {
-        flex: 1 1 45%; /* dos botones por fila si cabe */
+        flex: 1 1 45%;
         font-size: 0.95em;
         padding: 8px 12px;
       }
@@ -121,29 +117,63 @@
 <body>
   <div class="anime-container">
     <div class="anime-header">
-      <img src="img/portada-tomodachi.jpg" alt="Portada Tomodachi">
+      <img id="portadaAnime" src="" alt="Portada del anime">
       <div class="anime-info">
-        <h1>Tomodachi no Imouto ga Ore ni dake Uzai</h1>
-        <p>
-          ¡Si una chica te molesta, eso significa que le gustas! Desafortunadamente, Akiteru sabe por experiencia que no es así. 
-          Porque cada chica con la que interactúa solo le muestra desprecio, ¡y no ha conseguido salir con ninguna! 
-          Afortunadamente, le preocupa más conseguir un lugar para él y sus amigos de desarrollo de juegos en el negocio de su tío. 
-          Pero cuando su tío le impone una condición que implica hacer el papel de novio de su hija, Akiteru no tiene más remedio que aceptarlo. 
-          ¿Qué pensará Iroha, la hermana de su mejor amigo, que lo acosa sin parar, sobre la noticia?
-        </p>
-        <p class="estado">🟢 En emisión</p>
+        <h1 id="tituloAnime"></h1>
+        <p id="descripcionAnime"></p>
+        <p class="estado" id="estadoAnime"></p>
       </div>
     </div>
 
     <h2>📺 Lista de capítulos</h2>
-    <div class="capitulos">
-      <button onclick="window.location.href='ver.html?anime=tomodachi&cap=1'">Episodio 1</button>
-      <button onclick="window.location.href='ver.html?anime=tomodachi&cap=2'">Episodio 2</button>
-      <button onclick="window.location.href='ver.html?anime=tomodachi&cap=3'">Episodio 3</button>
-      <button onclick="window.location.href='ver.html?anime=tomodachi&cap=4'">Episodio 4</button>
-      <button onclick="window.location.href='ver.html?anime=tomodachi&cap=5'">Episodio 5</button>
-      <!-- Puedes seguir agregando más -->
-    </div>
+    <div class="capitulos" id="listaCapitulos"></div>
   </div>
+
+  <script>
+    // --- Base de datos de animes ---
+    const animes = {
+      tomodachi: {
+        titulo: "Tomodachi no Imouto ga Ore ni dake Uzai",
+        descripcion: "¡Si una chica te molesta, eso significa que le gustas! Desafortunadamente, Akiteru sabe por experiencia que no es así...",
+        portada: "img/portada-tomodachi.jpg",
+        estado: "🟢 En emisión",
+        capitulos: 4
+      },
+      sawaranaide: {
+        titulo: "sawaranaide kotesashi-kun",
+        descripcion: "Kouyou Kotesashi posee habilidades excepcionales en masaje y sueña con convertirse en médico deportivo. Para asegurarse una beca para la escuela de medicina, se inscribe en la Escuela Secundaria Afiliada a la Universidad Seiwa, una potencia en atletismo. Proveniente de una familia pobre, Kouyou acepta un trabajo como residente en el dormitorio de la escuela para cubrir sus gastos. Sin embargo, pronto se encuentra rodeado de un grupo de atletas femeninas altamente talentosas pero peculiares. ¿Su papel? Administrar el dormitorio mientras también se encarga de su bienestar físico y mental. Con una mezcla de entrenamiento intenso, la vida en el dormitorio y la terapia de masaje, ¡comienza un nuevo capítulo impredecible y atrevido!",
+        portada: "img/portada-sawaranaide.jpg",
+        estado: "🟢 En emisión",
+        capitulos: 4
+      },
+      oregairu: {
+        titulo: "Oregairu",
+        descripcion: "Hachiman Hikigaya es un estudiante antisocial con una visión cínica de la vida, obligado a unirse al club de servicio.",
+        portada: "img/portada-oregairu.jpg",
+        estado: "🔵 Finalizado",
+        capitulos: 13
+      }
+    };
+
+    // --- Obtener el anime desde la URL ---
+    const params = new URLSearchParams(window.location.search);
+    const animeId = params.get("anime") || "tomodachi";
+    const anime = animes[animeId] || animes["tomodachi"];
+
+    // --- Insertar la información ---
+    document.getElementById("tituloAnime").textContent = anime.titulo;
+    document.getElementById("descripcionAnime").textContent = anime.descripcion;
+    document.getElementById("portadaAnime").src = anime.portada;
+    document.getElementById("estadoAnime").textContent = anime.estado;
+
+    // --- Generar lista de capítulos ---
+    const lista = document.getElementById("listaCapitulos");
+    for (let i = 1; i <= anime.capitulos; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = `Episodio ${i}`;
+      btn.onclick = () => window.location.href = `ver.html?anime=${animeId}&cap=${i}`;
+      lista.appendChild(btn);
+    }
+  </script>
 </body>
 </html>
