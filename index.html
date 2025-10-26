@@ -5,72 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AnimeStream - Principal</title>
   <style>
-    body {
-      background-color: #0e0e0e;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
+  body {
+    background-color: #0e0e0e;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
 
-    header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
 
-    header h1 {
-      font-size: 3em;
-      color: #ffcc00;
-      margin: 0;
-    }
+  header h1 {
+    font-size: 3em;
+    color: #ffcc00;
+    margin: 0;
+  }
 
-    .anime-list {
-      max-width: 900px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+  .anime-list {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
+  .anime-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #1b1b1b;
+    border-radius: 12px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .anime-card:hover {
+    background-color: #2b2b2b;
+  }
+
+  .anime-card img {
+    width: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+
+  .anime-card h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #ffcc00;
+  }
+
+  /* --- Ajuste para móviles --- */
+  @media (max-width: 768px) {
     .anime-card {
-      display: flex;
+      flex-direction: row; /* mantiene imagen a la izquierda y texto a la derecha */
       align-items: center;
-      gap: 20px;
-      background-color: #1b1b1b;
-      border-radius: 12px;
-      padding: 15px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .anime-card:hover {
-      background-color: #2b2b2b;
+      text-align: left;
+      padding: 10px;
+      gap: 10px;
     }
 
     .anime-card img {
-      width: 120px;
-      border-radius: 10px;
-      object-fit: cover;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      width: 80px; /* portada más pequeña */
     }
 
     .anime-card h2 {
-      margin: 0;
-      font-size: 1.5em;
-      color: #ffcc00;
+      font-size: 1.1em;
+      line-height: 1.2;
     }
+  }
+</style>
 
-    @media (max-width: 768px) {
-      .anime-card {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .anime-card img {
-        width: 70%;
-      }
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -95,3 +105,4 @@
   </div>
 </body>
 </html>
+
