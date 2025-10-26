@@ -156,96 +156,81 @@
   </div>
 
   <script>
-    // === Base de datos de animes ===
-    const animes = {
-      tomodachi: {
-        titulo: "Tomodachi no Imouto ga Ore ni dake Uzai",
-        descripcion: "¡Si una chica te molesta, eso significa que le gustas! Desafortunadamente, Akiteru sabe por experiencia que no es así. Porque cada chica con la que interactúa solo le muestra desprecio, ¡y no ha conseguido salir con ninguna! Afortunadamente, le preocupa más conseguir un lugar para él y sus amigos de desarrollo de juegos en el negocio de su tío. Pero cuando su tío le impone una condición que implica hacer el papel de novio de su hija, Akiteru no tiene más remedio que aceptarlo. ¿Qué pensará Iroha, la hermana de su mejor amigo, que lo acosa sin parar, sobre la noticia?",
-        portada: "img/portada-tomodachi.jpg",
-        estado: "🟢 En emisión",
-        episodios: [
-          "https://hglink.to/e/zw27e3ujkceb",
-          "https://hglink.to/e/bkkegvtpbx4z",
-          "https://hglink.to/e/arqezhrhuz59",
-          "https://hglink.to/e/b9md60ijbay1"
-        ]
-      },
-      sawaranaide: {
-        titulo: "Sawaranaide, Asami-san",
-        descripcion: "Una historia romántica entre dos estudiantes que intentan mantener su relación en secreto.",
-        portada: "img/portada-sawaranaide.jpg",
-        estado: "🟢 En emisión",
-        episodios: [
-          "https://hglink.to/e/6id58vkshudm",
-          "https://hglink.to/e/afumweg1mvgg",
-          "https://hglink.to/e/kekpyhyz03fc",
-          "https://hglink.to/e/7oru7a7td4pv"
-        ]
-      },
-      sololeveling: {
-        titulo: "Solo Leveling",
-        descripcion: "Un cazador débil se convierte en el más poderoso del mundo en una historia llena de acción.",
-        portada: "img/portada-sololeveling.jpg",
-        estado: "En emisión",
-        episodios: [
-          "https://hglink.to/e/x1a2b3c4d5",
-          "https://hglink.to/e/y6z7w8v9u0"
-        ]
-      }
-    };
+const params = new URLSearchParams(window.location.search);
+const cap = parseInt(params.get("cap")) || 1;
+const anime = params.get("anime") || "tomodachi";
+let actual = cap - 1;
 
-    // === Obtener parámetros de la URL ===
-    const params = new URLSearchParams(window.location.search);
-    const animeId = params.get("anime") || "tomodachi";
-    const cap = parseInt(params.get("cap")) || 1;
-    let actual = cap - 1;
+// Datos de cada anime (puedes añadir más aquí)
+const animes = {
+  tomodachi: {
+    titulo: "Tomodachi no Imouto ga Ore ni dake Uzai",
+    sinopsis: "¡Si una chica te molesta, eso significa que le gustas!... (texto completo aquí)",
+    estado: "En emisión",
+    portada: "img/portada-tomodachi.jpg",
+    episodios: [
+      "https://hglink.to/e/zw27e3ujkceb",
+      "https://hglink.to/e/bkkegvtpbx4z",
+      "https://hglink.to/e/arqezhrhuz59",
+      "https://hglink.to/e/b9md60ijbay1",
+    ]
+  },
+  sawaranaide: {
+    titulo: "Sawaranaide Kotesashi-kun",
+    sinopsis: "Kotesashi lleva una vida tranquila hasta que un día conoce a una chica misteriosa... (puedes editar esta descripción)",
+    estado: "Finalizado",
+    portada: "img/portada-sawaranaide.jpg",
+    episodios: [
+      "https://hglink.to/e/6id58vkshudm",
+      "https://hglink.to/e/afumweg1mvgg",
+      "https://hglink.to/kekpyhyz03fc",
+      "https://hglink.to/e/7oru7a7td4pv",
+    ]
+  }
+};
 
-    const anime = animes[animeId];
+// Comprueba si el anime existe
+if (!animes[anime]) {
+  document.body.innerHTML = "<h1 style='color:red;text-align:center;'>❌ Anime no encontrado</h1>";
+  throw new Error("Anime no encontrado");
+}
 
-    // Si el anime no existe
-    if (!anime) {
-      document.body.innerHTML = "<h1 style='color:white;text-align:center;margin-top:50px;'>⚠️ Anime no encontrado</h1>";
-      throw new Error("Anime no encontrado");
-    }
+// Asigna datos dinámicamente
+const info = animes[anime];
+document.querySelector(".anime-cover").src = info.portada;
+document.querySelector(".anime-title").textContent = info.titulo;
+document.querySelector(".anime-sinopsis").textContent = info.sinopsis;
+document.querySelector(".anime-status span").textContent = info.estado;
 
-    // === Cargar info del anime ===
-    document.getElementById("portada").src = anime.portada;
-    document.getElementById("tituloAnime").textContent = anime.titulo;
-    document.getElementById("descripcionAnime").textContent = anime.descripcion;
-    document.getElementById("estadoAnime").textContent = anime.estado;
+const frame = document.getElementById("videoFrame");
+const titulo = document.getElementById("titulo");
+const episodios = info.episodios;
 
-    const frame = document.getElementById("videoFrame");
-    const tituloEp = document.getElementById("tituloEp");
+function cambiarEpisodio() {
+  frame.src = episodios[actual];
+  titulo.textContent = `📺 ${info.titulo} - Episodio ${actual + 1}`;
+}
 
-    function cambiarEpisodio() {
-      const lista = anime.episodios;
-      if (!lista[actual]) {
-        alert("Episodio no disponible");
-        return;
-      }
-      frame.src = lista[actual];
-      tituloEp.textContent = `📺 ${anime.titulo} - Episodio ${actual + 1}`;
-    }
+cambiarEpisodio();
 
+document.getElementById("anterior").onclick = () => {
+  if (actual > 0) {
+    actual--;
     cambiarEpisodio();
+  } else {
+    alert("Este es el primer episodio");
+  }
+};
 
-    document.getElementById("anterior").onclick = () => {
-      if (actual > 0) {
-        actual--;
-        cambiarEpisodio();
-      } else {
-        alert("Este es el primer episodio");
-      }
-    };
-
-    document.getElementById("siguiente").onclick = () => {
-      if (actual < anime.episodios.length - 1) {
-        actual++;
-        cambiarEpisodio();
-      } else {
-        alert("No hay más episodios");
-      }
-    };
-  </script>
+document.getElementById("siguiente").onclick = () => {
+  if (actual < episodios.length - 1) {
+    actual++;
+    cambiarEpisodio();
+  } else {
+    alert("No hay más episodios");
+  }
+};
+</script>
 </body>
 </html>
+
