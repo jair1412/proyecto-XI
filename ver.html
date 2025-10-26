@@ -155,48 +155,57 @@
         
     </div>
 
-    <script>
-        // Lista de episodios
-        const episodios = [
-            "https://hglink.to/e/zw27e3ujkceb", // episodio 1
-            "https://hglink.to/e/bkkegvtpbx4z", // episodio 2
-            "https://hglink.to/e/arqezhrhuz59", // episodio 3
-            "https://hglink.to/e/b9md60ijbay1", // episodio 4
+   <script>
+    // Lista de episodios
+    const episodios = [
+        "https://hglink.to/e/zw27e3ujkceb", // episodio 1
+        "https://hglink.to/e/bkkegvtpbx4z", // episodio 2
+        "https://hglink.to/e/arqezhrhuz59", // episodio 3
+        "https://hglink.to/e/b9md60ijbay1", // episodio 4
+    ];
 
-        ];
+    const frame = document.getElementById("videoFrame");
+    const titulo = document.getElementById("titulo");
+    const numEp = document.getElementById("numEp");
 
-        let actual = 0; // índice del episodio actual (0 = episodio 1)
+    // Leer número de episodio desde la URL
+    const params = new URLSearchParams(window.location.search);
+    const cap = parseInt(params.get("cap")) || 1; // si no hay ?cap=, carga el 1
+    let actual = cap - 1; // índice del episodio
 
-        const frame = document.getElementById("videoFrame");
-        const titulo = document.getElementById("titulo");
-        const numEp = document.getElementById("numEp");
+    // Cargar episodio al abrir la página
+    function cambiarEpisodio() {
+        frame.src = episodios[actual];
+        titulo.textContent = `📺 Episodio ${actual + 1}`;
+        numEp.textContent = actual + 1;
+    }
 
-        document.getElementById("anterior").onclick = () => {
-            if (actual > 0) {
-                actual--;
-                cambiarEpisodio();
-            } else {
-                alert("Este es el primer episodio");
-            }
-        };
+    cambiarEpisodio();
 
-        document.getElementById("siguiente").onclick = () => {
-            if (actual < episodios.length - 1) {
-                actual++;
-                cambiarEpisodio();
-            } else {
-                alert("No hay más episodios");
-            }
-        };
-
-        function cambiarEpisodio() {
-            frame.src = episodios[actual];
-            titulo.textContent = `📺 Episodio ${actual + 1}`;
-            numEp.textContent = actual + 1;
+    // Botón anterior
+    document.getElementById("anterior").onclick = () => {
+        if (actual > 0) {
+            actual--;
+            cambiarEpisodio();
+        } else {
+            alert("Este es el primer episodio");
         }
-    </script>
+    };
+
+    // Botón siguiente
+    document.getElementById("siguiente").onclick = () => {
+        if (actual < episodios.length - 1) {
+            actual++;
+            cambiarEpisodio();
+        } else {
+            alert("No hay más episodios");
+        }
+    };
+</script>
+
 </body>
 </html>
+
 
 
 
