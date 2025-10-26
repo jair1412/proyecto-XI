@@ -91,7 +91,13 @@ header p { font-size: 1.1em; opacity: 0.9; }
   border: none;
 }
 
-/* Controles (botones) */
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 .controls {
   display: flex;
   justify-content: center;
@@ -100,20 +106,15 @@ header p { font-size: 1.1em; opacity: 0.9; }
   align-items: center;
 }
 
-.btn {
-  background-color: #ffcc00;
-  color: #000;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 50px;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+  .controls {
+    flex-wrap: nowrap; /* anterior y siguiente en fila */
+  }
 
-.btn:hover {
-  background-color: #000;
-  color: #ffcc00;
+  .episodios-dropdown {
+    order: 1; /* fuerza que el dropdown quede después en móviles */
+  }
 }
 
 /* Botón Episodios */
@@ -202,15 +203,13 @@ header p { font-size: 1.1em; opacity: 0.9; }
         </iframe>
       </div>
 
+      <div class="controls-container">
       <div class="controls">
         <button class="btn" id="anterior">⬅️ Anterior</button>
-        <div class="episodios-dropdown">
-          <button class="btn" id="btnEpisodios">📖 Episodios ▼</button>
-          <div class="episodios-list" id="listaEpisodios">
-            <!-- Los episodios se llenarán con JS -->
-          </div>
+        <button class="btn episodios-dropdown" id="btnEpisodios>📄 Episodios</button>
         <button class="btn" id="siguiente">➡️ Siguiente</button>
       </div>
+      <div class="episodios-list" id="listaEpisodios"></div>
     </div>
   </div>
 
@@ -313,6 +312,7 @@ btnEpisodios.onclick = () => {
 </script>
 </body>
 </html>
+
 
 
 
