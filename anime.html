@@ -19,12 +19,12 @@
       background-color: #1b1b1b;
       border-radius: 12px;
       padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
     }
 
     .anime-header {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 20px;
       margin-bottom: 20px;
     }
@@ -32,6 +32,7 @@
     .anime-header img {
       width: 180px;
       border-radius: 10px;
+      object-fit: cover;
     }
 
     .anime-info h1 {
@@ -43,6 +44,7 @@
     .anime-info p {
       margin: 10px 0;
       line-height: 1.5;
+      text-align: justify;
     }
 
     .estado {
@@ -59,6 +61,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-bottom: 20px;
     }
 
     .capitulos button {
@@ -68,12 +71,50 @@
       padding: 10px 15px;
       border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.3s, color 0.3s;
+      flex: 1 1 100px; /* se adaptan al ancho disponible */
     }
 
     .capitulos button:hover {
       background-color: #ffcc00;
       color: #000;
+    }
+
+    /* --- Responsive para móviles --- */
+    @media (max-width: 768px) {
+      .anime-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .anime-header img {
+        width: 70%;
+        max-width: 250px;
+        margin-bottom: 15px;
+      }
+
+      .anime-info {
+        width: 100%;
+      }
+
+      .anime-info h1 {
+        font-size: 1.5em;
+      }
+
+      .anime-info p {
+        font-size: 0.95em;
+      }
+
+      .capitulos {
+        justify-content: center;
+      }
+
+      .capitulos button {
+        flex: 1 1 45%; /* dos botones por fila si cabe */
+        font-size: 0.95em;
+        padding: 8px 12px;
+      }
     }
   </style>
 </head>
@@ -83,7 +124,13 @@
       <img src="img/portada-tomodachi.jpg" alt="Portada Tomodachi">
       <div class="anime-info">
         <h1>Tomodachi no Imouto ga Ore ni dake Uzai</h1>
-        <p>¡Si una chica te molesta, eso significa que le gustas! Desafortunadamente, Akiteru sabe por experiencia que no es así. Porque cada chica con la que interactúa solo le muestra desprecio, ¡y no ha conseguido salir con ninguna! Afortunadamente, le preocupa más conseguir un lugar para él y sus amigos de desarrollo de juegos en el negocio de su tío. Pero cuando su tío le impone una condición que implica hacer el papel de novio de su hija, Akiteru no tiene más remedio que aceptarlo. ¿Qué pensará Iroha, la hermana de su mejor amigo, que lo acosa sin parar, sobre la noticia?</p>
+        <p>
+          ¡Si una chica te molesta, eso significa que le gustas! Desafortunadamente, Akiteru sabe por experiencia que no es así. 
+          Porque cada chica con la que interactúa solo le muestra desprecio, ¡y no ha conseguido salir con ninguna! 
+          Afortunadamente, le preocupa más conseguir un lugar para él y sus amigos de desarrollo de juegos en el negocio de su tío. 
+          Pero cuando su tío le impone una condición que implica hacer el papel de novio de su hija, Akiteru no tiene más remedio que aceptarlo. 
+          ¿Qué pensará Iroha, la hermana de su mejor amigo, que lo acosa sin parar, sobre la noticia?
+        </p>
         <p class="estado">🟢 En emisión</p>
       </div>
     </div>
@@ -100,4 +147,3 @@
   </div>
 </body>
 </html>
-
