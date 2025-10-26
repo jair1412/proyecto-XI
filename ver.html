@@ -142,6 +142,8 @@ header p { font-size: 1.1em; opacity: 0.9; }
   transition: max-height 0.4s ease, opacity 0.4s ease;
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
   z-index: 10;
+  width: max-content; /* se ajusta al contenido */
+  min-width: 120px;   /* ancho mínimo */
 }
 
 /* Cuando se muestra la lista */
@@ -218,10 +220,12 @@ header p { font-size: 1.1em; opacity: 0.9; }
       <div class="controls-container">
         <div class="controls">
           <button class="btn" id="anterior">⬅️ Anterior</button>
+          
+          <div class="episodios-dropdown"> <!-- contenedor relativo -->
           <button class="btn" id="btnEpisodios">📄 Episodios</button>
-          <button class="btn" id="siguiente">➡️ Siguiente</button>
+          <div class="episodios-list" id="listaEpisodios"></div>
         </div>
-        <div class="episodios-list" id="listaEpisodios"></div>
+          <button class="btn" id="siguiente">➡️ Siguiente</button>
       </div>
     </div>
   </div>
@@ -325,4 +329,5 @@ btnEpisodios.onclick = () => {
   </script>
 </body>
 </html>
+
 
