@@ -91,6 +91,7 @@ header p { font-size: 1.1em; opacity: 0.9; }
   border: none;
 }
 
+/* Controles */
 .controls-container {
   display: flex;
   flex-direction: column;
@@ -106,15 +107,20 @@ header p { font-size: 1.1em; opacity: 0.9; }
   align-items: center;
 }
 
-/* Ajuste para móviles */
-@media (max-width: 768px) {
-  .controls {
-    flex-wrap: nowrap; /* anterior y siguiente en fila */
-  }
+.btn {
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-  .episodios-dropdown {
-    order: 1; /* fuerza que el dropdown quede después en móviles */
-  }
+.btn:hover {
+  background-color: #000;
+  color: #ffcc00;
 }
 
 /* Botón Episodios */
@@ -162,6 +168,11 @@ header p { font-size: 1.1em; opacity: 0.9; }
 
 /* Ajustes responsive */
 @media (max-width: 768px) {
+  .controls-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
   .controls {
     flex-wrap: nowrap;
     gap: 8px;
@@ -176,8 +187,7 @@ header p { font-size: 1.1em; opacity: 0.9; }
   }
   .anime-cover { width: 70%; margin: 0 auto; }
 }
-</style>
-
+  </style>
 </head>
 <body>
   <div class="container">
@@ -204,12 +214,13 @@ header p { font-size: 1.1em; opacity: 0.9; }
       </div>
 
       <div class="controls-container">
-      <div class="controls">
-        <button class="btn" id="anterior">⬅️ Anterior</button>
-        <button class="btn episodios-dropdown" id="btnEpisodios>📄 Episodios</button>
-        <button class="btn" id="siguiente">➡️ Siguiente</button>
+        <div class="controls">
+          <button class="btn" id="anterior">⬅️ Anterior</button>
+          <button class="btn" id="btnEpisodios">📄 Episodios</button>
+          <button class="btn" id="siguiente">➡️ Siguiente</button>
+        </div>
+        <div class="episodios-list" id="listaEpisodios"></div>
       </div>
-      <div class="episodios-list" id="listaEpisodios"></div>
     </div>
   </div>
 
@@ -219,7 +230,7 @@ const cap = parseInt(params.get("cap")) || 1;
 const anime = params.get("anime") || "tomodachi";
 let actual = cap - 1;
 
-// Datos de cada anime (puedes añadir más aquí)
+// Datos de cada anime
 const animes = {
   tomodachi: {
     titulo: "Tomodachi no Imouto ga Ore ni dake Uzai",
@@ -289,7 +300,7 @@ document.getElementById("siguiente").onclick = () => {
   }
 };
 
-    //botón de episodios
+// Botón de episodios
 const btnEpisodios = document.getElementById("btnEpisodios");
 const listaEpisodios = document.getElementById("listaEpisodios");
 
@@ -300,7 +311,7 @@ episodios.forEach((url, index) => {
   epBtn.onclick = () => {
     actual = index;
     cambiarEpisodio();
-    listaEpisodios.classList.remove("show"); // cierra la lista al seleccionar
+    listaEpisodios.classList.remove("show");
   };
   listaEpisodios.appendChild(epBtn);
 });
@@ -309,12 +320,6 @@ episodios.forEach((url, index) => {
 btnEpisodios.onclick = () => {
   listaEpisodios.classList.toggle("show");
 };
-</script>
+  </script>
 </body>
 </html>
-
-
-
-
-
-
