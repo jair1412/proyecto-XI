@@ -125,25 +125,32 @@ header p { font-size: 1.1em; opacity: 0.9; }
 
 /* Botón Episodios */
 .episodios-dropdown {
-  position: relative;
+  position: relative; /* contenedor del botón */
   display: inline-block;
 }
 
 .episodios-list {
   position: absolute;
-  top: 110%;
+  top: 100%; /* justo debajo del botón */
   left: 50%;
   transform: translateX(-50%);
   background-color: #1b1b1b;
   border-radius: 12px;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
   opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
   z-index: 10;
 }
 
+/* Cuando se muestra la lista */
+.episodios-list.show {
+  max-height: 500px; /* suficiente para todos los episodios */
+  opacity: 1;
+}
+
+/* Animación “slide-down” */
 .episodios-list button {
   display: block;
   width: 100%;
@@ -153,17 +160,12 @@ header p { font-size: 1.1em; opacity: 0.9; }
   color: #fff;
   text-align: left;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.3s ease;
 }
 
 .episodios-list button:hover {
   background-color: #ffcc00;
   color: #000;
-}
-
-.episodios-list.show {
-  max-height: 500px;
-  opacity: 1;
 }
 
 /* Ajustes responsive */
@@ -252,7 +254,7 @@ const animes = {
     episodios: [
       "https://hglink.to/e/6id58vkshudm",
       "https://hglink.to/e/afumweg1mvgg",
-      "https://hglink.to/kekpyhyz03fc",
+      "https://hglink.to/e/kekpyhyz03fc",
       "https://hglink.to/e/7oru7a7td4pv",
     ]
   }
@@ -323,3 +325,4 @@ btnEpisodios.onclick = () => {
   </script>
 </body>
 </html>
+
