@@ -259,7 +259,7 @@ const animes = {
       "https://hglink.to/e/6id58vkshudm",
       "https://hglink.to/e/afumweg1mvgg",
       "https://hglink.to/e/kekpyhyz03fc",
-      "https://hglink.to/e/7oru7a7td4pv",
+      "https://hglink.to/e/7oru7a7td4pv"
     ]
   },
   ansatsusha: {
@@ -271,7 +271,7 @@ const animes = {
       "https://hglink.to/e/iulctvccj14a",  
       "https://hglink.to/e/4jbqy4ee3d6k",
       "https://hglink.to/e/6wndeetegjsq",
-      "https://hglink.to/e/1eoexfx3xr3s",
+      "https://hglink.to/e/1eoexfx3xr3s"
     ]
   },
   sozai: {
@@ -284,7 +284,7 @@ const animes = {
     "https://hglink.to/e/gb2jdv7voejj",
     "https://hglink.to/e/gv290ng3dr08",
     "https://hglink.to/e/j43uriptz8bg",
-    "https://hglink.to/e/ywzoboy6biso",
+    "https://hglink.to/e/ywzoboy6biso"
      ]
     },
   tondemo: {
@@ -296,8 +296,7 @@ const animes = {
     "https://hglink.to/e/1jjeylontqe4",
     "https://hglink.to/e/bviz9y84acp8",
     "https://hglink.to/e/5d3hrgdsxrog",
-    "https://hglink.to/e/e5juy7san5x4",
-    " ",
+    "https://hglink.to/e/e5juy7san5x4"
      ]
     },
     chitose: {
@@ -309,8 +308,7 @@ const animes = {
         "https://hglink.to/e/35oi65nemey6",
         "https://hglink.to/e/2ktg9g2zzh4e",
         "https://hglink.to/e/uanx3gyg6bw5",
-        "https://hglink.to/e/kg2sps5ciq23",
-        " ",
+        "https://hglink.to/e/kg2sps5ciq23"
         ]
       },
   
@@ -320,11 +318,7 @@ const animes = {
       estado: "finalizado",
       portada: "img/portada-capitana.jpg",
       episodios: [
-        "https://hglink.to/e/kjkfjorwg51i",
-        "https://hglink.to/e/kjkfjorwg51i",
-        "https://hglink.to/e/kjkfjorwg51i",
-        "https://hglink.to/e/kjkfjorwg51i",
-        " ",
+        "https://hglink.to/e/kjkfjorwg51i"
         ]
       },
     };
@@ -347,17 +341,6 @@ const tituloEp = document.getElementById("tituloEp");
 const episodios = info.episodios;
 
 function cambiarEpisodio() {
-  // correccion de error en consola
- // if (!episodios || episodios.length === 0) {
-   // console.error("❌ La lista de episodios no está cargada o está vacía.");
-   // return;
- // }
-
- // if (actual < 0 || actual >= episodios.length) {
-   // console.error(`❌ Índice de episodio inválido: ${actual}`);
-   // return;
- // }
-  // termina aqui
   frame.src = episodios[actual];
   tituloEp.textContent = `📺 ${info.titulo} - Episodio ${actual + 1}`;
 }
@@ -413,6 +396,7 @@ document.addEventListener("click", (e) => {
   </script>
 </body>
 </html>
+
 
 
 
