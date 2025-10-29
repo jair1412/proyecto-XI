@@ -321,6 +321,7 @@ const animes = {
       portada: "img/portada-capitana.jpg",
       espisodios: [
         "https://hglink.to/e/kjkfjorwg51i",
+        "https://hglink.to/e/kjkfjorwg51i",
           ]
         },
     };
@@ -344,15 +345,15 @@ const episodios = info.episodios;
 
 function cambiarEpisodio() {
   // correccion de error en consola
-  if (!episodios || episodios.length === 0) {
-    console.error("❌ La lista de episodios no está cargada o está vacía.");
-    return;
-  }
+ // if (!episodios || episodios.length === 0) {
+   // console.error("❌ La lista de episodios no está cargada o está vacía.");
+   // return;
+ // }
 
-  if (actual < 0 || actual >= episodios.length) {
-    console.error(`❌ Índice de episodio inválido: ${actual}`);
-    return;
-  }
+ // if (actual < 0 || actual >= episodios.length) {
+   // console.error(`❌ Índice de episodio inválido: ${actual}`);
+   // return;
+ // }
   // termina aqui
   frame.src = episodios[actual];
   tituloEp.textContent = `📺 ${info.titulo} - Episodio ${actual + 1}`;
@@ -409,6 +410,7 @@ document.addEventListener("click", (e) => {
   </script>
 </body>
 </html>
+
 
 
 
