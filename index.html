@@ -10,12 +10,14 @@
     color: #fff;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
   }
 
   header {
     text-align: center;
     margin-bottom: 30px;
+    position: relative;
+    padding: 20px;
   }
 
   header h1 {
@@ -24,12 +26,143 @@
     margin: 0;
   }
 
+  header p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+
+  /* 🔍 Buscador animado */
+  .buscador-contenedor {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px auto 0;
+    max-width: 900px;
+  }
+
+  .buscador {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #1b1b1b;
+    border-radius: 25px;
+    padding: 5px 10px;
+    width: 40px;
+    overflow: hidden;
+    transition: width 0.4s ease;
+  }
+
+  .buscador input {
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+    width: 0;
+    transition: width 0.4s ease;
+    font-size: 15px;
+  }
+
+  .buscador button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  .buscador.activo {
+    width: 220px;
+  }
+
+  .buscador.activo input {
+    width: 160px;
+    margin-left: 8px;
+  }
+
+  /* 🍔 Botón hamburguesa */
+  .hamburguesa {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #fff;
+  }
+
+  /* 📋 Menú lateral */
+  .menu-lateral {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #1b1b1b;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    z-index: 999;
+  }
+
+  .menu-lateral.activo {
+    left: 0;
+  }
+
+  .menu-lateral ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu-lateral li {
+    padding: 15px 25px;
+    border-bottom: 1px solid #2b2b2b;
+  }
+
+  .menu-lateral li a {
+    text-decoration: none;
+    color: #ffcc00;
+    font-size: 1.1em;
+    display: block;
+  }
+
+  .menu-lateral li a:hover {
+    color: #fff;
+  }
+
+  /* Fondo oscuro al abrir el menú */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    z-index: 998;
+  }
+
+  .overlay.activo {
+    display: block;
+  }
+
+  /* ❌ Botón cerrar */
+  .cerrar-menu {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 25px;
+    color: #ffcc00;
+    cursor: pointer;
+  }
+
   .anime-list {
     max-width: 900px;
     margin: auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 20px;
   }
 
   .anime-card {
@@ -63,7 +196,7 @@
   /* --- Ajuste para móviles --- */
   @media (max-width: 768px) {
     .anime-card {
-      flex-direction: row; /* mantiene imagen a la izquierda y texto a la derecha */
+      flex-direction: row;
       align-items: center;
       text-align: left;
       padding: 10px;
@@ -71,78 +204,130 @@
     }
 
     .anime-card img {
-      width: 80px; /* portada más pequeña */
+      width: 80px;
     }
 
     .anime-card h2 {
       font-size: 1.1em;
       line-height: 1.2;
     }
-  }
-</style>
 
+    .buscador-contenedor {
+      justify-content: center;
+    }
+  }
+  </style>
 </head>
 <body>
   <header>
+    <!-- 🍔 Botón hamburguesa -->
+    <button class="hamburguesa" id="btnMenu">☰</button>
+
     <h1>AnimeStream</h1>
     <p>Disfruta de tus animes favoritos en HD</p>
+
+    <!-- 🔍 Cuadro de búsqueda -->
+    <div class="buscador-contenedor">
+      <div class="buscador" id="buscador">
+        <button id="btnBuscar">🔍</button>
+        <input type="text" id="inputBuscar" placeholder="Buscar anime...">
+      </div>
+    </div>
   </header>
 
-  <div class="anime-list">
-    <!-- Anime 1 -->
+  <!-- 📋 Menú lateral -->
+  <div class="menu-lateral" id="menuLateral">
+    <span class="cerrar-menu" id="cerrarMenu">✖</span>
+    <ul>
+      <li><a href="#">🏠 Inicio</a></li>
+      <li><a href="#">📂 Categorías</a></li>
+      <li><a href="#">📺 Animes en emisión</a></li>
+      <li><a href="#">🎬 Películas</a></li>
+      <li><a href="#">💡 Recomendar anime</a></li>
+    </ul>
+  </div>
+
+  <!-- Fondo oscuro -->
+  <div class="overlay" id="overlay"></div>
+
+  <div class="anime-list" id="animeList">
     <div class="anime-card" onclick="window.location.href='ver.html?anime=tomodachi&cap=1'">
       <img src="img/portada-tomodachi.jpg" alt="Portada Tomodachi">
       <h2>Tomodachi no Imouto ga Ore ni dake Uzai</h2>
     </div>
 
-    <!-- Anime 2 -->
-      <div class="anime-card" onclick="window.location.href='ver.html?anime=sawaranaide&cap=1'">
-        <img src="img/portada-sawaranaide.jpg" alt="Portada sawaranaide">
-        <h2>Sawaranaide Kotesashi-kun</h2>
-      </div>
+    <div class="anime-card" onclick="window.location.href='ver.html?anime=sawaranaide&cap=1'">
+      <img src="img/portada-sawaranaide.jpg" alt="Portada sawaranaide">
+      <h2>Sawaranaide Kotesashi-kun</h2>
+    </div>
 
-      <!-- Anime 3 -->
-      <div class="anime-card" onclick="window.location.href='ver.html?anime=ansatsusha&cap=1'">
-        <img src="img/portada-ansatsusha.jpg" alt="Portada Anime 3">
-        <h2>Ansatsusha de Aru Ore no Status ga Yuusha yori mo Akiraka ni Tsuyoi no da ga</h2>
-      </div>
+    <div class="anime-card" onclick="window.location.href='ver.html?anime=ansatsusha&cap=1'">
+      <img src="img/portada-ansatsusha.jpg" alt="Portada Anime 3">
+      <h2>Ansatsusha de Aru Ore no Status ga Yuusha yori mo Akiraka ni Tsuyoi no da ga</h2>
+    </div>
 
-      <div class="anime-card" onclick="window.location.href='ver.html?anime=sozai&cap=1'">
-          <img src="img/portada-sozai.jpg" alt="Portada Anime 4">
-          <h2>Sozai Saishuka no Isekai Ryokouki</h2>
-      </div>
+    <div class="anime-card" onclick="window.location.href='ver.html?anime=sozai&cap=1'">
+      <img src="img/portada-sozai.jpg" alt="Portada Anime 4">
+      <h2>Sozai Saishuka no Isekai Ryokouki</h2>
+    </div>
 
-      <div class="anime-card" onclick="window.location.href='ver.html?anime=tondemo&cap=1'">
-          <img src="img/portada-tondemo.jpg" alt="Portada Anime 5">
-          <h2>Tondemo Skill de Isekai Hourou Meshi season 2</h2>
-      </div>
-    
-      <div class="anime-card" onclick="window.location.href='ver.html?anime=chitose&cap=1'">
-          <img src="img/portada-chitose-kun.jpg" alt="Portada Anime 6">
-          <h2>Chitose-kun wa Ramune Bin no Naka</h2>
-      </div>
+    <div class="anime-card" onclick="window.location.href='ver.html?anime=tondemo&cap=1'">
+      <img src="img/portada-tondemo.jpg" alt="Portada Anime 5">
+      <h2>Tondemo Skill de Isekai Hourou Meshi season 2</h2>
+    </div>
+
+    <div class="anime-card" onclick="window.location.href='ver.html?anime=chitose&cap=1'">
+      <img src="img/portada-chitose-kun.jpg" alt="Portada Anime 6">
+      <h2>Chitose-kun wa Ramune Bin no Naka</h2>
+    </div>
 
     <div class="anime-card" onclick="window.location.href='ver.html?anime=capitana&cap=1'">
-          <img src="img/portada-capitana.jpg" alt="Portada pelicula">
-          <h2>Capitana Marvel</h2>
-      </div>
-    
-    
-    <!-- Aquí puedes agregar más animes de la misma forma -->
-    <!--
-    <div class="anime-card" onclick="window.location.href='anime4.html'">
-      <img src="img/portada-anime7.jpg" alt="Portada Anime 7">
-      <h2>Nombre del Anime 4</h2>
+      <img src="img/portada-capitana.jpg" alt="Portada pelicula">
+      <h2>Capitana Marvel</h2>
     </div>
-    -->
   </div>
+
+  <script>
+    // ----- Buscador -----
+    const buscador = document.getElementById('buscador');
+    const btnBuscar = document.getElementById('btnBuscar');
+    const inputBuscar = document.getElementById('inputBuscar');
+    const animeList = document.getElementById('animeList');
+    const animes = animeList.getElementsByClassName('anime-card');
+
+    btnBuscar.addEventListener('click', () => {
+      buscador.classList.toggle('activo');
+      inputBuscar.focus();
+    });
+
+    inputBuscar.addEventListener('input', () => {
+      const texto = inputBuscar.value.toLowerCase();
+      for (let i = 0; i < animes.length; i++) {
+        const titulo = animes[i].querySelector('h2').textContent.toLowerCase();
+        animes[i].style.display = titulo.includes(texto) ? 'flex' : 'none';
+      }
+    });
+
+    // ----- Menú lateral -----
+    const btnMenu = document.getElementById('btnMenu');
+    const menuLateral = document.getElementById('menuLateral');
+    const cerrarMenu = document.getElementById('cerrarMenu');
+    const overlay = document.getElementById('overlay');
+
+    btnMenu.addEventListener('click', () => {
+      menuLateral.classList.add('activo');
+      overlay.classList.add('activo');
+    });
+
+    cerrarMenu.addEventListener('click', () => {
+      menuLateral.classList.remove('activo');
+      overlay.classList.remove('activo');
+    });
+
+    overlay.addEventListener('click', () => {
+      menuLateral.classList.remove('activo');
+      overlay.classList.remove('activo');
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
