@@ -216,6 +216,27 @@
       justify-content: center;
     }
   }
+
+  /* Ajuste del header en móviles */
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .hamburguesa {
+    left: 10px;
+    top: 20px;
+  }
+
+  header h1 {
+    font-size: 2.2em;
+    margin-top: 10px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -306,9 +327,14 @@
     const animeList = document.getElementById('animeList');
     const animes = animeList.getElementsByClassName('anime-card');
 
-    btnBuscar.addEventListener('click', () => {
+    btnBuscar.addEventListener('click', (event) => {
+      event.stopPropagation(); 
       buscador.classList.toggle('activo');
       inputBuscar.focus();
+    });
+
+    inputBuscar.addEventListener('click', (event) => {
+      event.stopPropagation();
     });
 
     inputBuscar.addEventListener('input', () => {
@@ -316,6 +342,18 @@
       for (let i = 0; i < animes.length; i++) {
         const titulo = animes[i].querySelector('h2').textContent.toLowerCase();
         animes[i].style.display = titulo.includes(texto) ? 'flex' : 'none';
+      }
+    });
+
+    // Cerrar buscador al hacer click fuera
+    document.addEventListener('click', () => {
+      if (buscador.classList.contains('activo')) {
+        buscador.classList.remove('activo');
+        inputBuscar.value = "";
+        // Restablecer la lista de animes
+        for (let i = 0; i < animes.length; i++) {
+          animes[i].style.display = 'flex';
+        }
       }
     });
 
@@ -342,9 +380,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
