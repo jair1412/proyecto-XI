@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -272,66 +273,68 @@
   <div class="overlay" id="overlay"></div>
 
   <div class="anime-list" id="animeList">
-    <div class="anime-card" onclick="window.location.href='ver.html?anime=tomodachi&cap=1'">
+    <div class="anime-card" onclick="abrirAnime('tomodachi')">
       <img src="img/portada-tomodachi.jpg" alt="Portada Tomodachi">
       <h2>Tomodachi no Imouto ga Ore ni dake Uzai</h2>
     </div>
 
-    <div class="anime-card" onclick="window.location.href='ver.html?anime=sawaranaide&cap=1'">
+    <div class="anime-card" onclick="abrirAnime('sawaranaide')">
       <img src="img/portada-sawaranaide.jpg" alt="Portada sawaranaide">
       <h2>Sawaranaide Kotesashi-kun</h2>
     </div>
 
-    <div class="anime-card" onclick="window.location.href='ver.html?anime=ansatsusha&cap=1'">
+    <div class="anime-card" onclick="abrirAnime('ansatsusha')">
       <img src="img/portada-ansatsusha.jpg" alt="Portada Anime 3">
       <h2>Ansatsusha de Aru Ore no Status ga Yuusha yori mo Akiraka ni Tsuyoi no da ga</h2>
     </div>
 
-    <div class="anime-card" onclick="window.location.href='ver.html?anime=sozai&cap=1'">
+    <div class="anime-card" onclick="abrirAnime('sozai')">
       <img src="img/portada-sozai.jpg" alt="Portada Anime 4">
       <h2>Sozai Saishuka no Isekai Ryokouki</h2>
     </div>
 
-    <div class="anime-card" onclick="window.location.href='ver.html?anime=tondemo&cap=1'">
+    <div class="anime-card" onclick="abrirAnime('tondemo')">
       <img src="img/portada-tondemo.jpg" alt="Portada Anime 5">
       <h2>Tondemo Skill de Isekai Hourou Meshi season 2</h2>
     </div>
 
-    <div class="anime-card" onclick="window.location.href='ver.html?anime=chitose&cap=1'">
+    <div class="anime-card" onclick="abrirAnime('chitose')">
       <img src="img/portada-chitose-kun.jpg" alt="Portada Anime 6">
       <h2>Chitose-kun wa Ramune Bin no Naka</h2>
     </div>
 
-    <div class="anime-card" onclick="window.location.href='ver.html?anime=mushoku&cap=1'">
+    <div class="anime-card" onclick="abrirAnime('mushoku')">
       <img src="img/portada-mushoku.jpg" alt="Portada Anime 7">
       <h2>Mushoku no Eiyuu: Betsu ni Skill Nanka Iranakatta n da ga</h2>
     </div>
 
-    <div class="anime-card" onclick="window.location.href='ver.html?anime=kekkon&cap=1'">
+    <div class="anime-card" onclick="abrirAnime('kekkon')">
       <img src="img/portada-kekkon.jpg" alt="Portada Anime 8">
       <h2>Kekkon Yubiwa Monogatari II</h2>
     </div>
 
-    <div class="anime-card" onclick="window.location.href='ver.html?anime=mikata&cap=1'">
+    <div class="anime-card" onclick="abrirAnime('mikata')">
       <img src="img/portada-mikata.jpg" alt="Portada Anime 9">
       <h2>Mikata ga Yowasugite Hojo Mahou</h2>
     </div>
     
-    <div class="anime-card" onclick="window.location.href='ver.html?anime=bukiyou&cap=1'">
+    <div class="anime-card" onclick="abrirAnime('bukiyou')">
       <img src="img/portada-bukiyou.jpg" alt="Portada Anime 10">
       <h2>Bukiyou na Senpai</h2>
     </div>
 
-    <div class="anime-card" onclick="window.location.href='ver.html?anime=mugen&cap=1'">
+    <div class="anime-card" onclick="abrirAnime('mugen')">
       <img src="img/portada-mugen.jpg" alt="Portada Anime 10">
       <h2>Mugen Gacha</h2>
     </div>
 
-    <div class="anime-card" onclick="window.location.href='ver.html?anime=boku&cap=1'">
+    <div class="anime-card" onclick="abrirAnime('boku')">
       <img src="img/portada-boku.jpg" alt="Portada Anime 11">
       <h2>Boku No Hero Academia: Final Season</h2>
     </div>
   </div>
+
+<script src="animes.js"></script>
 
   <script>
     // ----- Buscador -----
@@ -391,9 +394,20 @@
       menuLateral.classList.remove('activo');
       overlay.classList.remove('activo');
     });
+
+    // abrir ultimo capitulo
+    function abrirAnime(nombre) {
+  if (!ANIMES[nombre]) {
+    alert("Este anime no está registrado.");
+    return;
+  }
+
+  const totalCaps = ANIMES[nombre].episodios.length;
+  const ultimoCap = totalCaps > 0 ? totalCaps : 1;
+
+  window.location.href = `ver.html?anime=${nombre}&cap=${ultimoCap}`;
+}
+
   </script>
 </body>
 </html>
-
-
-
