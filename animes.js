@@ -2,6 +2,9 @@ const ANIMES = {
 
   tomodachi: {
     titulo: "Tomodachi no Imouto ga Ore ni dake Uzai",
+    sinopsis: " ¡Si una chica te molesta, eso significa que le gustas! Desafortunadamente, Akiteru sabe por experiencia que no es así. Porque cada chica con la que interactúa solo le muestra desprecio, ¡y no ha conseguido salir con ninguna! Afortunadamente, le preocupa más conseguir un lugar para él y sus amigos de desarrollo de juegos en el negocio de su tío. Pero cuando su tío le impone una condición que implica hacer el papel de novio de su hija, Akiteru no tiene más remedio que aceptarlo. ¿Qué pensará Iroha, la hermana de su mejor amigo, que lo acosa sin parar, sobre la noticia?",
+    estado: "🟢 En emisión",
+    portada: "img/portada-tomodachi.jpg",
     episodios: [
       "https://hglink.to/e/zw27e3ujkceb",
       "https://hglink.to/e/bkkegvtpbx4z",
@@ -17,6 +20,9 @@ const ANIMES = {
 
   sawaranaide: {
     titulo: "Sawaranaide Kotesashi-kun",
+    sinopsis: "Kouyou Kotesashi posee habilidades excepcionales en masaje y sueña con convertirse en médico deportivo. Para asegurarse una beca para la escuela de medicina, se inscribe en la Escuela Secundaria Afiliada a la Universidad Seiwa, una potencia en atletismo. Proveniente de una familia pobre, Kouyou acepta un trabajo como residente en el dormitorio de la escuela para cubrir sus gastos. Sin embargo, pronto se encuentra rodeado de un grupo de atletas femeninas altamente talentosas pero peculiares. ¿Su papel? Administrar el dormitorio mientras también se encarga de su bienestar físico y mental. Con una mezcla de entrenamiento intenso, la vida en el dormitorio y la terapia de masaje, ¡comienza un nuevo capítulo impredecible y atrevido!",
+    estado: "🟢 En emisión",
+    portada: "img/portada-sawaranaide.jpg",
     episodios: [
       "https://hglink.to/e/6id58vkshudm",
       "https://hglink.to/e/afumweg1mvgg",
@@ -32,6 +38,9 @@ const ANIMES = {
 
   ansatsusha: {
     titulo: "Ansatsusha de Aru Ore no Status ga Yuusha yori mo Akiraka ni Tsuyoi no da ga",
+    sinopsis: "Oda Akira es el tipo de persona que la gente olvida que está presente. Sin embargo, su naturaleza discreta tiene sus beneficios cuando toda su clase es transportada a un mundo de fantasía, y él se adapta fácilmente a su nuevo rol como un asesino silencioso. Con sus sospechosamente altas estadísticas iniciales y demasiados detalles que no encajan, Akira está seguro de que algo no anda bien. Pero indagar en secretos reales es un juego peligroso, y cuando Akira descubre un plan maligno, también se hace un poderoso enemigo: ¡el mismo rey que lo trajo a este mundo! Con la ayuda de la medium elfa Amelia, ¿podrá encontrar el poder para poner las cosas en su lugar y vengarse?",
+    estado: "🟢 En emisión",
+    portada: "img/portada-ansatsusha.jpg",
     episodios: [
       "https://hglink.to/e/iulctvccj14a",  
       "https://hglink.to/e/4jbqy4ee3d6k",
@@ -46,6 +55,9 @@ const ANIMES = {
   },
   sozai: {
       titulo: "Sozai Saishuka no Isekai Ryokouki",
+      sinopsis: "Takeru Kamishiro es un chico normal con un trabajo de oficina ordinario, pero se encuentra siendo convocado a otro mundo. Takeru comienza su nueva vida en Madeus, un mundo con espadas y magia, ¡completamente equipado con múltiples habilidades! No solo tiene habilidades físicas mejoradas y asombrosos poderes mágicos, sino también el poder de buscar objetos valiosos. Con las habilidades trampa que le han sido otorgadas, Takeru inicia su nueva aventura en este nuevo isekai.",
+      estado: "🟢 En emisión",
+      portada: "img/portada-sozai.jpg",
       episodios: [
     "https://hglink.to/e/aias2ueo18a7",
     "https://hglink.to/e/gb2jdv7voejj",
@@ -61,6 +73,9 @@ const ANIMES = {
     },
   tondemo: {
       titulo: "Tondemo Skill de Isekai Hourou Meshi Season 2",
+      sinopsis: "Segunda temporada de Tondemo Skill de Isekai Hourou Meshi.",
+      estado: "🟢 En emisión",
+      portada: "img/portada-tondemo.jpg",
       episodios: [
     "https://hglink.to/e/1jjeylontqe4",
     "https://hglink.to/e/bviz9y84acp8",
@@ -75,6 +90,9 @@ const ANIMES = {
     },
     chitose: {
       titulo: "Chitose-kun wa Ramune Bin no Naka",
+      sinopsis: "Los insultos dirigidos a Saku Chitose son pan de cada día. Apodado el mujeriego sinvergüenza de la Clase 5, es constantemente difamado en línea por aquellos que sienten celos de su popularidad. Afortunadamente, esto apenas afecta la confianza de Saku. Fuera de los foros de internet de nicho, es la figura respetable que sus compañeros admiran y un estudiante modelo en quien sus profesores confían. Con el inicio de su segundo año de preparatoria, Saku se reúne con sus viejos amigos y hace nuevos, todos pertenecientes a la élite social de la escuela. Sin embargo, la diversión se ve interrumpida cuando el profesor tutor de Saku le pide que convenza a su compañero de clase recluso, Kenta Yamazaki, para que regrese a la escuela. Deseando resolver las cosas rápidamente, Saku visita la casa de Kenta al día siguiente. Pero la tarea resulta ser más desafiante de lo que esperaba cuando descubre que Kenta está completamente en contra de Saku. Si quiere preservar su impecable imagen, Saku debe encontrar la manera de ganarse a Kenta y llevarlo de vuelta a la escuela.",
+      estado: "🟢 En emisión",
+      portada: "img/portada-chitose-kun.jpg",
       episodios: [
         "https://hglink.to/e/35oi65nemey6",
         "https://hglink.to/e/2ktg9g2zzh4e",
@@ -87,6 +105,9 @@ const ANIMES = {
 
   mushoku: {
       titulo: "Mushoku no Eiyuu: Betsu ni Skill Nanka Iranakatta n da ga",
+      sinopsis: "Clases son otorgadas a la edad de 10 años, y la presencia o ausencia de habilidades afecta enormemente la vida. Arel, el hijo de la Princesa Espada Farah y el Archimago Leon, ha sido marcado como Sin Clase... Pero incluso sin una clase o habilidades, Arel cree que puede perseverar a través del esfuerzo.",
+      estado: "🟢 En emisión",
+      portada: "img/portada-mushoku.jpg",
       episodios: [
         "https://hglink.to/e/zgsqzm2wmwwc",
         "https://hglink.to/e/7yk561btcrko",
@@ -103,6 +124,9 @@ const ANIMES = {
 
       kekkon: {
         titulo: "Kekkon Yubiwa Monogatari II",
+        sinopsis: "Segunda temporada de Kekkon Yubiwa Monogatari",
+        estado: "🟢 En emisión",
+        portada: "img/portada-kekkon.jpg",
         episodios: [
       "https://hglink.to/e/shz8uzmodw9b",
       "https://hglink.to/e/geapth1dww2c",
@@ -119,6 +143,9 @@ const ANIMES = {
   
     mikata: {
         titulo: "Mikata ga Yowasugite Hojo Mahou",
+        sinopsis: "Después de perder su trabajo como mago de la corte, Alec Ygret se reúne con su antiguo grupo y regresa a la aventura.",
+        estado: "🟢 En emisión",
+        portada: "img/portada-mikata.jpg",
         episodios: [
           "https://hglink.to/e/0wr1injcsdtp",
           "https://hglink.to/e/zwgssno5rwam",
@@ -134,6 +161,9 @@ const ANIMES = {
 
     bukiyou: {
         titulo: "Bukiyou na Senpai",
+        sinopsis: "Kannawa-senpai es considerada muchas cosas, pero suave definitivamente no es una de ellas. Luego conoce a Kamegawa, su nuevo Kouhai. Es lindo, un poco nerd y fácil de hablar. ¡¿Cómo podrá esta torpe Senpai manejar estos nuevos sentimientos?!",
+        estado: "🟢 En emisión",
+        portada: "img/portada-bukiyou.jpg",
         episodios: [
           "https://hglink.to/e/svwj2je3uh3a",
           "https://hglink.to/e/yuqu85iq4hqr",
@@ -149,6 +179,9 @@ const ANIMES = {
 
     mugen: {
         titulo: "Mugen Gacha",
+        sinopsis: "Cuando Light es expulsado del Concordato de las Tribus, sus antiguos camaradas se vuelven instantáneamente en su contra. Light escapa de este acto diabólico de traición por un pelo... ¡solo para encontrarse en la parte más profunda del Abismo, la mazmorrra más peligrosa del reino! Para evitar ser devorado por monstruos carnívoros, utiliza el Gacha Ilimitado, su única habilidad mágica. Pero donde antes solo producía objetos inútiles, esta vez aparece Mei, ¡una magnífica luchadora de nivel 9999 vestida de sirvienta! Avancemos tres años y Light ha forjado su propio reino en esta remota mazmorra, invocando más bellos guerreros de nivel 9999 que le juran lealtad absoluta. Ahora, siendo un poderoso Señor Oscuro de nivel 9999, Light planea ascender a la superficie y vengarse de sus traidores uno a uno.",
+        estado: "🟢 En emisión",
+        portada: "img/portada-mugen.jpg",
         episodios: [
           "https://hglink.to/e/8ige06mvpiag",
           "https://hglink.to/e/vgr3gipmfvxz",
@@ -164,7 +197,9 @@ const ANIMES = {
 
     boku: {
         titulo: "Boku No Hero Academia: Final Season",
-        episodios: [
+        sinopsis: "Última temporada de boku no hero acadmia.",
+        estado: "🟢 En emisión",
+        portada: "img/portada-boku.jpg",[
           "https://hglink.to/e/qzcmpbh25ys9",
           "https://hglink.to/e/za29tieldg5y",
           "https://hglink.to/e/4x21rn3is4jf",
@@ -177,4 +212,5 @@ const ANIMES = {
         ]
       },
 };
+
 
