@@ -199,7 +199,8 @@ const ANIMES = {
         titulo: "Boku No Hero Academia: Final Season",
         sinopsis: "Última temporada de boku no hero acadmia.",
         estado: "🟢 En emisión",
-        portada: "img/portada-boku.jpg",[
+        portada: "img/portada-boku.jpg",
+        episodios: [
           "https://hglink.to/e/qzcmpbh25ys9",
           "https://hglink.to/e/za29tieldg5y",
           "https://hglink.to/e/4x21rn3is4jf",
@@ -212,5 +213,6 @@ const ANIMES = {
         ]
       },
 };
+
 
 
