@@ -89,7 +89,8 @@ const ANIMES = {
     "https://hglink.to/e/d1o5zfgu9yyo",
     "https://hglink.to/e/zg8bifrhmytl",
     "https://hglink.to/e/dcb9dah70hq7",
-    "https://hglink.to/e/wtwmywaklbwn"
+    "https://hglink.to/e/wtwmywaklbwn",
+    "https://hglink.to/e/yxqkd9hgntb4"
      ]
     },
     chitose: {
@@ -103,7 +104,8 @@ const ANIMES = {
         "https://hglink.to/e/uanx3gyg6bw5",
         "https://hglink.to/e/kg2sps5ciq23",
         "https://hglink.to/e/8z6qhe6hgiu2",
-        "https://hglink.to/e/ok020to4sj9f"
+        "https://hglink.to/e/ok020to4sj9f",
+        "https://hglink.to/e/kkfnzih6a2v5"
         ]
       },
 
@@ -222,6 +224,7 @@ const ANIMES = {
         ]
       },
 };
+
 
 
 
