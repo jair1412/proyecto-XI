@@ -112,7 +112,7 @@ const ANIMES = {
   mushoku: {
       titulo: "Mushoku no Eiyuu: Betsu ni Skill Nanka Iranakatta n da ga",
       sinopsis: "Clases son otorgadas a la edad de 10 años, y la presencia o ausencia de habilidades afecta enormemente la vida. Arel, el hijo de la Princesa Espada Farah y el Archimago Leon, ha sido marcado como Sin Clase... Pero incluso sin una clase o habilidades, Arel cree que puede perseverar a través del esfuerzo.",
-      estado: "🟢 En emisión",
+      estado: "Finalizado",
       portada: "img/portada-mushoku.jpg",
       episodios: [
         "https://hglink.to/e/zgsqzm2wmwwc",
@@ -125,7 +125,8 @@ const ANIMES = {
         "https://hglink.to/e/cbcacssqq5od",
         "https://hglink.to/e/g2onjb178knv",
         "https://hglink.to/e/1owrxy2yyijd",
-        "https://hglink.to/e/dnedk4bmla09"
+        "https://hglink.to/e/dnedk4bmla09",
+        "https://hglink.to/e/1rxhlg3615fg"
         ]
       },
 
@@ -224,6 +225,7 @@ const ANIMES = {
         ]
       },
 };
+
 
 
 
