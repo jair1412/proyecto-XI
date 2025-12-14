@@ -188,7 +188,8 @@ const ANIMES = {
           "https://hglink.to/e/7qmzk52f0jsq",
           "https://hglink.to/e/iw0hundblvto",
           "https://hglink.to/e/mcppcy82xcbe",
-          "https://hglink.to/e/l0xkqa2neic9"
+          "https://hglink.to/e/l0xkqa2neic9",
+          "https://hglink.to/e/w7h3yre1fzci"
         ]
       },
 
@@ -207,7 +208,8 @@ const ANIMES = {
           "https://hglink.to/e/8kzcncyhaz9n",
           "https://hglink.to/e/wi697un01lmp",
           "https://hglink.to/e/jwtu3fnuhej0",
-          "https://hglink.to/e/uvgbs5x2usgp"
+          "https://hglink.to/e/uvgbs5x2usgp",
+          "https://hglink.to/e/ltveo3f2q88u"
         ]
       },
 
@@ -230,6 +232,7 @@ const ANIMES = {
         ]
       },
 };
+
 
 
 
