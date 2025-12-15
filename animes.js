@@ -55,7 +55,8 @@ const ANIMES = {
       "https://hglink.to/e/ukbkehz35cob",
       "https://hglink.to/e/wmwnd7q31d8w",
       "https://hglink.to/e/ux92piolkyvm",
-      "https://hglink.to/e/9fyg1gw38s1i"
+      "https://hglink.to/e/9fyg1gw38s1i",
+      "https://hglink.to/e/baj2s4zwamf6"
     ]
   },
   sozai: {
@@ -74,7 +75,8 @@ const ANIMES = {
     "https://hglink.to/e/9lzh6qgcv3zf",
     "https://hglink.to/e/jhrtcxzpbame",
     "https://hglink.to/e/faq7n0o623rd",
-    "https://hglink.to/e/ezju7zh35hnk"
+    "https://hglink.to/e/ezju7zh35hnk",
+    "https://hglink.to/e/d1cpifs149ld"
      ]
     },
   tondemo: {
@@ -232,6 +234,7 @@ const ANIMES = {
         ]
       },
 };
+
 
 
 
