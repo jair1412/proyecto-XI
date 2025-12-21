@@ -37,7 +37,8 @@ const ANIMES = {
       "https://hglink.to/e/fj1atyy3xldx",
       "https://hglink.to/e/9n0yal1gzmk3",
       "https://hglink.to/e/u3iiwhs0rsr3",
-      "https://hglink.to/e/aq5vfnqxyg7c"
+      "https://hglink.to/e/aq5vfnqxyg7c",
+      "https://hglink.to/e/rh6iuzy2vct8"
     ]
   },
 
@@ -241,6 +242,7 @@ const ANIMES = {
         ]
       },
 };
+
 
 
 
