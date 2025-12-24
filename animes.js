@@ -58,13 +58,14 @@ const ANIMES = {
       "https://hglink.to/e/wmwnd7q31d8w",
       "https://hglink.to/e/ux92piolkyvm",
       "https://hglink.to/e/9fyg1gw38s1i",
-      "https://hglink.to/e/baj2s4zwamf6"
+      "https://hglink.to/e/baj2s4zwamf6",
+      "https://hglink.to/e/aharym70az9u"
     ]
   },
   sozai: {
       titulo: "Sozai Saishuka no Isekai Ryokouki",
       sinopsis: "Takeru Kamishiro es un chico normal con un trabajo de oficina ordinario, pero se encuentra siendo convocado a otro mundo. Takeru comienza su nueva vida en Madeus, un mundo con espadas y magia, ¡completamente equipado con múltiples habilidades! No solo tiene habilidades físicas mejoradas y asombrosos poderes mágicos, sino también el poder de buscar objetos valiosos. Con las habilidades trampa que le han sido otorgadas, Takeru inicia su nueva aventura en este nuevo isekai.",
-      estado: "🟢 En emisión",
+      estado: "Finalizado",
       portada: "img/portada-sozai.jpg",
       episodios: [
     "https://hglink.to/e/aias2ueo18a7",
@@ -84,7 +85,7 @@ const ANIMES = {
   tondemo: {
       titulo: "Tondemo Skill de Isekai Hourou Meshi Season 2",
       sinopsis: "Segunda temporada de Tondemo Skill de Isekai Hourou Meshi.",
-      estado: "🟢 En emisión",
+      estado: "Finalizado",
       portada: "img/portada-tondemo.jpg",
       episodios: [
     "https://hglink.to/e/1jjeylontqe4",
@@ -97,7 +98,8 @@ const ANIMES = {
     "https://hglink.to/e/dcb9dah70hq7",
     "https://hglink.to/e/wtwmywaklbwn",
     "https://hglink.to/e/yxqkd9hgntb4",
-    "https://hglink.to/e/cha6xbwuh7aw"
+    "https://hglink.to/e/cha6xbwuh7aw",
+    "https://hglink.to/e/b7ly5h7ea2hu"
      ]
     },
     chitose: {
@@ -113,7 +115,8 @@ const ANIMES = {
         "https://hglink.to/e/8z6qhe6hgiu2",
         "https://hglink.to/e/ok020to4sj9f",
         "https://hglink.to/e/kkfnzih6a2v5",
-        "https://hglink.to/e/t30aq1tjsbhs"
+        "https://hglink.to/e/t30aq1tjsbhs",
+        "https://hglink.to/e/ymya8o29qs9w"
         ]
       },
 
@@ -242,6 +245,7 @@ const ANIMES = {
         ]
       },
 };
+
 
 
 
