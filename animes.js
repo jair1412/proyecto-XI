@@ -245,7 +245,30 @@ const ANIMES = {
           "https://hglink.to/e/t5w7fprvlxr1"
         ]
       },
-};
+
+  kaguya: {
+        titulo: "Kaguya-sama wa Kokurasetai: Otona e no Kaidan",
+        sinopsis: "Especial de televisión de Kaguya-sama wa Kokurasetai.",
+        estado: "🟢 En Emisión",
+        portada: "img/portada-kaguya.jpg",
+        episodios: [
+          "https://hglink.to/e/86cdkanet6hk",
+          "https://hglink.to/e/2w4cwlmjp34b"
+        ]
+      },
+
+  yuusha: {
+        titulo: "Yuusha Party wo Oidasareta Kiyoubinbou",
+        sinopsis: "Orn Doula, hoy será tu último día en el grupo. Orn, un hábil espadachín, se había adaptado al papel de encantador para llenar un vacío crucial en el Grupo de Héroes. Sin embargo, un día, el líder del grupo lo despide abruptamente, alegando que sus habilidades son insuficientes. Marcado como un debilucho y un todólogo, maestro de nada por sus excompañeros, Orn es expulsado sin pensarlo dos veces. Decidido a comenzar de nuevo, regresa a la aventura—esta vez como espadachín, el papel en el que originalmente destacó. Pero su tiempo como encantador no fue en vano. La experiencia, el conocimiento y los innumerables hechizos originales que desarrolló en el Grupo de Héroes lo han forjado en un guerrero como ningún otro. Ahora, armado con un conjunto de habilidades poco convencionales, Orn está listo para labrar su propio camino—uno que demostrará su verdadera fuerza al mundo.",
+        estado: "🟢 En Emisión",
+        portada: "img/portada-yuusha.jpg",
+        episodios: [
+          "https://hglink.to/e/zztrv29na6dd"
+          
+        ]
+      },
+    };
+
 
 
 
