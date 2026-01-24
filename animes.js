@@ -250,7 +250,7 @@ const ANIMES = {
   kaguya: {
         titulo: "Kaguya-sama wa Kokurasetai: Otona e no Kaidan",
         sinopsis: "Especial de televisión de Kaguya-sama wa Kokurasetai.",
-        estado: "🟢 En Emisión",
+        estado: "Terminado.",
         portada: "img/portada-kaguya.jpg",
         episodios: [
           "https://hglink.to/e/86cdkanet6hk",
@@ -264,11 +264,52 @@ const ANIMES = {
         estado: "🟢 En Emisión",
         portada: "img/portada-yuusha.jpg",
         episodios: [
-          "https://hglink.to/e/zztrv29na6dd"
+          "https://hglink.to/e/1g1ngxxefhm7",
+          "https://hglink.to/e/8dxp7yb4xggq",
+          "https://hglink.to/e/oxfptxutxona",
+          "https://hglink.to/e/c3rvgmp7g056"
           
         ]
       },
+
+kizoku: {
+        titulo: "Kizoku Tensei: Megumareta Umare kara Saikyou no Chikara wo Eru",
+        sinopsis: "Noah, el niño de seis años más fuerte del mundo, ocupa la afortunada posición de ser el Decimotercer Príncipe del emperador. Nacido con un límite de nivel infinito y una habilidad de trampa que le permite añadir las habilidades de aquellos a quienes manda a las suyas, es inigualable. Reencarnado en una familia noble, Noah prospera en un entorno enriquecido con una educación excepcional y recursos abundantes, lo que permite que sus talentos florezcan. Sin embargo, detrás de la glamorosa fachada de la sociedad aristocrática se oculta un mundo de conspiraciones y luchas por el poder.",
+        estado: "🟢 En Emisión.",
+        portada: "img/portada-Kizoku.jpg",
+        episodios: [
+          "https://hglink.to/e/vyt0fti3jh2p",
+          "https://hglink.to/e/qaend610k1w9",
+          "https://hglink.to/e/z9ai5rajdj0d"
+        ]
+      },
+
+          yuusha_kei:{
+        titulo: "Yuusha-kei ni Shosu: Choubatsu Yuusha 9004-tai Keimu Kiroku",
+        sinopsis: "Hero es el peor castigo del mundo. Aquellos condenados por crímenes atroces son sentenciados a convertirse en Héroes y obligados a ingresar al servicio militar obligatorio en la guerra contra los Señores Demonios. A estos convictos ni siquiera se les permite morir: si son asesinados, serán resucitados para luchar otro día. El héroe Xylo Forbartz, exjefe de la Orden de los Caballeros Santos, lidera una unidad penal de deplorables que combate en las líneas del frente. Es en estas circunstancias extremas donde conoce a Teoritta, una de las armas más poderosas del mundo. Cuando cada último enemigo haya sido derrotado, debes cubrirme de alabanzas y acariciarme la cabeza. Para sobrevivir y vengarse de aquellos que le hicieron daño, hace un pacto con la diosa y se lanza de lleno a un torbellino de guerra e intriga.",
+        estado: "🟢 En Emisión.",
+        portada: "img/portada-kaguya.jpg",
+        episodios: [
+          "https://hglink.to/e/zdlnfic0axau",
+          "https://hglink.to/e/efs20w325q6m",
+          "https://hglink.to/e/0us65jfh6qmd"
+        ]
+      },
+
+  yuusha_kawaii: {
+        titulo: "Yuusha Party ni Kawaii Ko ga Ita node, Kokuhaku shitemita.",
+        sinopsis: "Youki murió en un accidente de tráfico y renació en un mundo de fantasía. Sin embargo, en lugar de convertirse en el héroe de las leyendas, terminó reencarnando en un demonio extremadamente poderoso. Sin deseos de convertirse en el Señor Demonio, se queda en el castillo del Señor Demonio como un guardián de bajo rango. Un día, el grupo del héroe viene a atacar y, por capricho, derriba a todo el grupo. Después de sanar al grupo del héroe y prepararse para enviarlos de regreso al pueblo, nota a la sacerdotisa y se enamora a primera vista.",
+        estado: "🟢 En Emisión.",
+        portada: "img/portada-yuusha_kawaii.jpg",
+        episodios: [
+          "https://hglink.to/e/q1lh8cupyjgd",
+          "https://hglink.to/e/w0oddis451ek",
+          "https://hglink.to/e/9lnyoejj2y7x"
+        ]
+      },
+
     };
+
 
 
 
