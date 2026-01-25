@@ -308,7 +308,32 @@ kizoku: {
         ]
       },
 
+  dragon: {
+        titulo: "Tensei shitara Dragon no Tamago datta",
+        sinopsis: "Nuestro héroe se despierta un día en un mundo completamente nuevo… pero su nueva vida no viene con habilidades de combate ni poderes mágicos, ¡ni siquiera con brazos y piernas! Renace como un huevo indefenso, atrapado en un bosque desconocido rodeado de bestias aterradoras y hambrientas. Pero los huevos eclosionan, los polluelos crecen, y los humildes comienzos pueden conducir a algo grandioso. ¡Hará su mejor esfuerzo para convertirse en el dragón más fuerte de todos los tiempos, y ninguna concha despreciable se interpondrá en su camino!",
+        estado: "🟢 En Emisión.",
+        portada: "img/portada-dragon.jpg",
+        episodios: [
+          "https://hglink.to/e/6ruc236n2q51",
+          "https://hglink.to/e/h54rbz38jkal",
+          "https://hglink.to/e/8mlvchbu8t3v"
+        ]
+      },
+
+  android: {
+        titulo: "Android wa Keiken Ninzuu ni Hairimasu ka??",
+        sinopsis: "La asistente de oficina Tsuda Akane, de 28 años, parece tenerlo todo bajo control. Hermosa, inteligente y una trabajadora indispensable en una fábrica de robótica, Akane es admirada en su trabajo... porque sus colegas no la ven en casa. En privado, Akane es un desastre total, con un apartamento que parece más un vertedero que un espacio habitable. ¡Menos mal que, en un momento de borrachera, pidió un nuevo androide llamado Nadeshiko para ayudarla a limpiar! Bueno, tal vez no sea tan bueno, porque la hermosa androide que llega es sensual irresistible. ¡Akane está a punto de recibir más servicio del que esperaba!",
+        estado: "🟢 En Emisión.",
+        portada: "img/portada-android.jpg",
+        episodios: [
+          "https://hglink.to/e/cv5t23n70c3c",
+          "https://hglink.to/e/smgrk21ep6ap",
+          "https://hglink.to/e/a1po3d7uegip"
+        ]
+      },
+
     };
+
 
 
 
