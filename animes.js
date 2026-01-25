@@ -280,7 +280,8 @@ kizoku: {
         episodios: [
           "https://hglink.to/e/vyt0fti3jh2p",
           "https://hglink.to/e/qaend610k1w9",
-          "https://hglink.to/e/z9ai5rajdj0d"
+          "https://hglink.to/e/z9ai5rajdj0d",
+          "https://hglink.to/e/z7wfmyw72vku"
         ]
       },
 
@@ -333,6 +334,7 @@ kizoku: {
       },
 
     };
+
 
 
 
